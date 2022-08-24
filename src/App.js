@@ -1,18 +1,27 @@
-// import logo from "./logo.svg";
-import "./App.css";
+import "./styles/App.scss";
+import { MenuNav } from "./components/layout/navBar";
+import { ItemListContainer } from "./components/layout/itemListContainer";
 
-import MenuNav from "./components/navBar";
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <MenuNav />
+        <MenuNav/>
       </header>
 
-      <body>
-        <p>Estoy trabajando en el disenio de la pagina haha</p>
-      </body>
+      <main>
+        <div className="left-items">
+
+        <ItemListContainer name='La dame De Montrose' price='24' />
+        <ItemListContainer name='Di Montefalco' price='15' />
+        <ItemListContainer name='ST HENRY SHIRAZ' price='39' />
+
+        </div>
+      </main>
+
+
     </div>
   );
 }
