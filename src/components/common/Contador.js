@@ -18,7 +18,7 @@ export const Contador = ( { stock, initial} ) =>{
     }
 
     return(
-        <div className="container my-4">
+        <div className="container my-4 d-flex justify-content-center" >
             <button className="btn btn-outline-dark" onClick={ handleMinus }>-</button>
             <span className="mx-3">{ counter }</span>
             <button className="btn btn-outline-dark" onClick={ handleAdd }>+</button>

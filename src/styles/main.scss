@@ -2,22 +2,25 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  // margin-left: 350px;
   .left-items {
-    display: flex;
-    flex-direction: column;
     .product-container {
       display: flex;
-      width: 400px;
+      width: 500px;
       padding: 10px;
-      margin: 30px;
+      margin: 70px 25px;
       background-color: #a62b39;
       cursor: pointer;
+      justify-content: space-evenly;
+      position: relative;
       .img-product {
         img {
           width: auto;
-          height: 200px;
-          margin-top: -60px;
+          height: 300px;
+          position: absolute;
+          top: -20%;
+          left: 0;
+          margin-left: 45px;
+          
         }
         margin-right: 50px;
       }
