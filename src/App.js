@@ -1,6 +1,9 @@
 import "./styles/App.scss";
 import { MenuNav } from "./components/layout/navBar";
 import { ItemListContainer } from "./components/layout/itemListContainer";
+import { Contador } from "./components/common/Contador";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -12,12 +15,8 @@ function App() {
       </header>
 
       <main>
-        <div className="left-items">
-
-        <ItemListContainer name='La dame De Montrose' price='24' />
-        <ItemListContainer name='Di Montefalco' price='15' />
-        <ItemListContainer name='ST HENRY SHIRAZ' price='39' />
-
+        <div className="container left-items ">
+        <ItemListContainer/>
         </div>
       </main>
 

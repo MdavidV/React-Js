@@ -2,17 +2,17 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-left: 350px;
+  // margin-left: 350px;
   .left-items {
     display: flex;
     flex-direction: column;
     .product-container {
       display: flex;
       width: 400px;
-      height: 150px;
       padding: 10px;
       margin: 30px;
       background-color: #a62b39;
+      cursor: pointer;
       .img-product {
         img {
           width: auto;
@@ -28,17 +28,16 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        button {
+        a {
           width: 30px;
           height: 30px;
-          border: none;
-          outline: none;
-          background: none;
-          cursor: pointer;
           img {
             height: 100%;
             width: 100%;
           }
+        }
+        button{
+          background-color: rgba($color: #fff, $alpha: .3);
         }
       }
     }

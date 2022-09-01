@@ -1,23 +1,12 @@
-import cart from "../../assets/In.svg";
-import wine from "../../assets/1.png"
 import "../../styles/App.scss";
+import { Item } from "./item";
 
-export const ItemListContainer = ({ name, price }) => {
+export const ItemListContainer = () => {
   return (
-    <div className="product-container">
-      <div className="img-product">
-        <img src={ wine }/>
-      </div>
-      <div className="details-product">
-        <p>
-          {name}
-          <br />
-          <span>{price} $</span>
-        </p>
-        <button>
-          <img className="cart-icon" src={cart} />
-        </button>
-      </div>
+    <div>
+      <Item name='La dame De Montrose' price='24' />
+      <Item name='Di Montefalco' price='15' />
+      <Item name='ST HENRY SHIRAZ' price='39' /> 
     </div>
-  );
+  )
 };
