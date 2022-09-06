@@ -1,13 +1,12 @@
 import cart from "../../assets/In.svg";
-import wine from "../../assets/1.png";
 import "../../styles/App.scss";
 import { Contador } from "../common/Contador";
 
-export const Item = ({ name, price, stock }) => {
+export const Item = ({ name, price, stock, img }) => {
   return (
     <div className="product-container">
       <div className="img-product">
-        <img src={wine} />
+        <img src={img} />
       </div>
       <div className="details-product">
         <p>

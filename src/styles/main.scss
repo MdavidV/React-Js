@@ -1,4 +1,7 @@
 main {
+  .try{
+    font-size: 128px;
+  }
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -17,10 +20,9 @@ main {
           width: auto;
           height: 300px;
           position: absolute;
-          top: -20%;
+          top: -26%;
           left: 0;
-          margin-left: 45px;
-          
+          margin-left: 20px;
         }
         margin-right: 50px;
       }
@@ -39,8 +41,8 @@ main {
             width: 100%;
           }
         }
-        button{
-          background-color: rgba($color: #fff, $alpha: .3);
+        button {
+          background-color: rgba($color: #fff, $alpha: 0.3);
         }
       }
     }
