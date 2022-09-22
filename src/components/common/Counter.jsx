@@ -1,35 +1,18 @@
 import { useState } from "react";
 import swal from "sweetalert";
+import { Link } from "react-router-dom";
 
-export const Contador = ({ item }) => {
-  let [counter, setCounter] = useState(1);
-
+export const Counter = ({ max, counter, setCounter, handleAddToCart }) => {
   const handleAdd = () => {
-    if (counter < item.stock) {
+    if (counter < max) {
       setCounter(counter + 1);
-      return counter;
     }
   };
 
   const handleMinus = () => {
     if (counter > 1) {
       setCounter(counter - 1);
-      return counter;
     }
-  };
-
-  const handleAddToCart = () => {
-    swal({
-      title: "Nice!",
-      text: `
-                The wine ${item.buttonname} has been added successfully! 
-                Cuantity: ${counter}
-                Total price: ${item.price * counter}
-            `,
-      icon: "success",
-      buttons: true,
-    //   button: "Continue with Chckout",
-    })
   };
 
   return (
@@ -45,12 +28,13 @@ export const Contador = ({ item }) => {
       </div>
 
       <div className="add-cont my-2">
-        <button
+        <Link
+        to='/Cart'
           className="anchor-item btn btn-outline-danger edit"
           onClick={handleAddToCart}
         >
           Add to Cart!
-        </button>
+        </Link>
       </div>
     </div>
   );
