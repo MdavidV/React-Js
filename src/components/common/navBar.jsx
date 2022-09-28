@@ -23,25 +23,25 @@ export const MenuNav = () => {
         </div>
         <nav className="Menu-nav">
           <div className="Anchors-nav">
-            <a href="#" className="item-menu-Nav">
+            <Link to='/' className="item-menu-Nav">
               Check Out
-            </a>
+            </Link>
             <a href="#" className="item-menu-Nav">
               T & C
             </a>
             <a href="#" className="item-menu-Nav">
               Shop
             </a>
-            <Link className="item-menu-Nav" to="/">Buy Now!</Link>
+            <Link className="item-menu-Nav" to="/products">Buy Now!</Link>
           </div>
           <div className="logo-header">
             <img src={logo} alt="" className="logo" />
           </div>
         </nav>
         <div className="cart-container">
-          <button>
+          <Link to='/cart'>
             <img className="cart-icon" src={cart} />
-          </button>
+          </Link>
         </div>
       </div>
     </header>

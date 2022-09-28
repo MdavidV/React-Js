@@ -1,11 +1,17 @@
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { Counter } from "../../common/Counter";
+import { CartContext } from "../Cart/CartContext";
 
 
 export const ItemDetails = ({ item }) => {
 
   const [quantity, setQuantity] = useState(1);
+  const {cart, addToCart, isInCart} = useContext(CartContext);
+
+  
+
 
   const handleAddToCart = () => {
     const itemToCart = {
@@ -15,7 +21,8 @@ export const ItemDetails = ({ item }) => {
       quantity,
     };
 
-    console.log(itemToCart);
+    
+    addToCart(itemToCart);
   };
 
   return (
@@ -35,10 +42,13 @@ export const ItemDetails = ({ item }) => {
 
           <Counter
             max={item.stock}
+            id={item.id}
             counter={quantity}
             setCounter={setQuantity}
             handleAddToCart={handleAddToCart}
           />
+
+            
         </div>
       </div>
     </div>

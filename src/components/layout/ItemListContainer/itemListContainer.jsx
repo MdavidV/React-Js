@@ -3,8 +3,10 @@ import "../../../styles/App.scss";
 import { GetDataFromJson } from "../../common/GetDataFromJson";
 import { Item } from "../Item/item";
 import Spinner from "react-bootstrap/Spinner";
-import { useParams } from 'react-router-dom';
-
+import { useParams } from "react-router-dom";
+import { MenuNav } from "../../common/navBar";
+import { FilterMenu } from "../../common/FilterMenu";
+import { Footer } from "../Footer/Footer";
 
 export const ItemListContainer = () => {
   const [product, setProducts] = useState([]);
@@ -12,21 +14,18 @@ export const ItemListContainer = () => {
 
   const { categoryId } = useParams();
 
-
-  console.log(categoryId); 
+  console.log(categoryId);
 
   useEffect(() => {
     setLoading(true);
 
     GetDataFromJson()
       .then((res) => {
-
-        if(!categoryId){
+        if (!categoryId) {
           setProducts(res);
-        }else{
-          setProducts ( res.filter( (prod) => prod.category === categoryId) )
+        } else {
+          setProducts(res.filter((prod) => prod.category === categoryId));
         }
-
       })
       .finally(() => {
         setLoading(false);
@@ -34,8 +33,12 @@ export const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
-    <main className="container">
-      <div className="row left-items">
+    <div>
+      <main className="container">
+        <MenuNav />
+
+        <FilterMenu />
+        <div className="row left-items">
           {loading ? (
             <div className=" my-5 loader-cont">
               <Spinner
@@ -47,15 +50,12 @@ export const ItemListContainer = () => {
             </div>
           ) : (
             product.map((el) => {
-              return (
-                <Item
-                  key={el.id}
-                  product={el}
-                />
-              );
+              return <Item key={el.id} product={el} />;
             })
           )}
         </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 };

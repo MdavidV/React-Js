@@ -65,7 +65,7 @@ export const Footer = () => {
         </div>
             <div className="row footer-fixed">
               
-                    <h3 className='mt-4'>Copyright 2022 su papa pirobo. Los derechos los compro su cucha</h3>
+                    <h3 className='mt-4'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, minus!</h3>
             </div>
     </footer>
   )

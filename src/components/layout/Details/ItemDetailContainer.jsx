@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from 'react-router-dom'
 import { GetDataFromJson } from "../../common/GetDataFromJson";
 import { ItemDetails } from "./ItemDetail";
 import Spinner from "react-bootstrap/Spinner";
+import { MenuNav } from "../../common/navBar";
+import { FilterMenu } from "../../common/FilterMenu";
+import { Footer } from "../Footer/Footer";
+import { CartContext } from "../Cart/CartContext";
 
 export const ItemDetail = () => {
 
     const [item, setItem] = useState(null)
     const [loading, setLoading] = useState(true)
     const { itemId } = useParams();
-
-
-    console.log(item);
 
     useEffect( () => {
         setLoading(true)
@@ -30,6 +31,8 @@ export const ItemDetail = () => {
 
     return(
         <div>
+            <MenuNav/>
+            <FilterMenu/>
             {
                 loading
                 ? 
@@ -44,6 +47,7 @@ export const ItemDetail = () => {
                   
                 : <ItemDetails item={item}/>
             }
+            <Footer/>
         </div>
     )
 

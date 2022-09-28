@@ -3,16 +3,23 @@
 @import 'main.scss';
 @import 'footer.scss';
 
+@font-face {
+  font-family: 'MyFont';
+  src: local('MyFont'), url(../assets/Fonts/NeueHaasGrotTextRound-55Roman-Web.woff.ttf);
+}
+
+
 
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  letter-spacing: 2px;
+  font-family: MyFont;
+  font-weight: 400;
 }
 
 #root{
-  background-color: #FAF8E6;
+  background-color: #eeeeec;
   overflow-x: hidden;
 }
 
