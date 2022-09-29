@@ -27,11 +27,11 @@ export const Counter = ({ max, counter, setCounter, handleAddToCart, id }) => {
   isInCart(id)
   ?<Link to='/cart' className="btn btn-outline-success my-2 col-6 mx-5">Go to Checkout</Link>
   : <div className="counter-cont">
-        <button className="btn btn-outline-dark" onClick={handleMinus}>
+        <button className={counter === 1 ? "btn btn-dark" : "btn btn-outline-dark"} onClick={handleMinus} disabled={counter === 1}>
             -
         </button>
         <span className="mx-3">{counter}</span>
-        <button className="btn btn-outline-dark" onClick={handleAdd}>
+        <button className={counter === max ? "btn btn-dark" : "btn btn-outline-dark"} onClick={handleAdd} disabled={counter === max}>
             +
         </button>
         <div className="add-cont my-2">

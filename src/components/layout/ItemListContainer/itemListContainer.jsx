@@ -49,9 +49,13 @@ export const ItemListContainer = () => {
               />
             </div>
           ) : (
-            product.map((el) => {
-              return <Item key={el.id} product={el} />;
-            })
+            product.map( (prod) => {
+              if (prod.stock > 0){
+                return <Item key={prod.id} product={prod } />
+              } else {
+                return null;
+              }
+            } )
           )}
         </div>
       </main>
