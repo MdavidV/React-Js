@@ -14,11 +14,11 @@ export const FilterMenu = () => {
             <Dropdown.Menu>
               <Dropdown.Item>
                 {" "}
-                <Link to="/products/Malbec"> Malbec </Link>{" "}
+                <Link to="/products/RedWine"> Red Wine </Link>{" "}
               </Dropdown.Item>
               <Dropdown.Item>
                 {" "}
-                <Link to="/products/Merlot"> Merlot </Link>{" "}
+                <Link to="/products/WhiteWine"> Merlot </Link>{" "}
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

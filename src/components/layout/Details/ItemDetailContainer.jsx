@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from 'react-router-dom'
-import { GetDataFromJson } from "../../common/GetDataFromJson";
 import { ItemDetails } from "./ItemDetail";
 import Spinner from "react-bootstrap/Spinner";
 import { MenuNav } from "../../common/navBar";
 import { FilterMenu } from "../../common/FilterMenu";
 import { Footer } from "../Footer/Footer";
-import { CartContext } from "../Cart/CartContext";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../../firebase/config";
 
 export const ItemDetail = () => {
 
@@ -17,16 +17,17 @@ export const ItemDetail = () => {
     useEffect( () => {
         setLoading(true)
 
+        const docRef = doc(db, 'Products', itemId);
 
-        GetDataFromJson()
-            .then( (res) => {
-                setItem( res.find( (prod) => prod.id === Number(itemId) ) );
-            } )
-
+        getDoc(docRef)
+            .then((doc) => {
+                setItem({id: doc.id, ...doc.data()})
+            })
 
             .finally( () => {
                 setLoading(false);
-            })
+            } )
+
     }, [])
 
     return(
